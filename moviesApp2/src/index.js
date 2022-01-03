@@ -17,6 +17,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 import LoginPage from "./pages/loginPage";
+import SignUpPage from "./pages/signUpPage";
 import AuthProvider from "./contexts/authContext";
 import PrivateRoute from "./components/privateRoute";
 
@@ -40,6 +41,7 @@ const App = () => {
             {" "}
       <Switch>
         <Route path="/login" component={LoginPage} />
+        <Route path="/signup" component={SignUpPage} />
         <Route exact path="/reviews/form" component={AddMovieReviewPage} />
         <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
         <Route exact path="/people/trending" component={TrendingPeoplePage} />
