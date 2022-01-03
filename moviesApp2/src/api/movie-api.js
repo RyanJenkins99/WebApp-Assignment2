@@ -18,6 +18,20 @@ export const signup = (username, password) => {
     }).then(res => res.json())
 };
 
+export const getMovies = () => {
+    return fetch(
+        '/api/movies?page=1&limit=10'
+      ).then((response) => {
+      if (!response.ok) {
+        throw new Error(response.json().message);
+      }
+      return response.json();
+    })
+    .catch((error) => {
+       throw error
+    });
+  };
+
 export const addFavouriteMovie = (userName, id) => {
     return fetch('/api/users/${userName}/favourites', {
         headers: {
